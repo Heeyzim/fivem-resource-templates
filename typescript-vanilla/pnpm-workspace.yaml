@@ -17,3 +17,8 @@ catalog:
   '@rollup/plugin-commonjs': ^26.0.1
   '@rollup/plugin-node-resolve': ^15.2.3
   '@rollup/plugin-typescript': ^11.1.6
+  #Eslint
+  '@rocketseat/eslint-config': ^2.2.2
+  'eslint': ^8.57.1
+  #fast-glub
+  'fast-glob': ^3.3.2

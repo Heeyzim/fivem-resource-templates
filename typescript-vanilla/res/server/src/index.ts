@@ -1,7 +1,7 @@
-import { init } from "./init";
+import { init } from './init'
 
-on("onResourceStart", (resName: string) => {
+on('onResourceStart', (resName: string) => {
   if (resName === GetCurrentResourceName()) {
-    init();
+    init()
   }
-});
+})

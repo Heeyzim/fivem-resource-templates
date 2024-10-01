@@ -1,6 +1,6 @@
 interface DebugEvent<T = unknown> {
-  action: string;
-  data: T;
+  action: string
+  data: T
 }
 
 /**
@@ -12,23 +12,23 @@ interface DebugEvent<T = unknown> {
  */
 export const mockTriggerNuiEvents = <T>(
   events: DebugEvent<T>[],
-  timer = 1000
+  timer = 1000,
 ): void => {
   for (const event of events) {
     setTimeout(() => {
       window.dispatchEvent(
-        new MessageEvent("message", {
+        new MessageEvent('message', {
           data: {
             action: event.action,
             data: event.data,
           },
-        })
-      );
-    }, timer);
+        }),
+      )
+    }, timer)
   }
-};
+}
 
 export const mockTriggerNuiEvent = <T>(
   event: DebugEvent<T>,
-  timer = 1000
-): void => mockTriggerNuiEvents([event], timer);
+  timer = 1000,
+): void => mockTriggerNuiEvents([event], timer)

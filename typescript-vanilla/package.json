@@ -5,7 +5,9 @@
     "clean": "pnpm --recursive clean",
     "clean:all": "rm -rf node_modules && pnpm --recursive clean",
     "build": "pnpm --recursive build",
-    "watch": "pnpm --recursive watch"
+    "watch": "pnpm --recursive watch",
+    "lint": "pnpm --recursive lint"
+    
   },
   "devDependencies": {},
   "engines": {

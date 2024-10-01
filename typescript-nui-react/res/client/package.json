@@ -7,14 +7,17 @@
     "--------- BUILD ---------": "--------- BUILD ---------",
     "build": "rollup -c",
     "--------- WATCH ---------": "--------- WATCH ---------",
-    "watch": "rollup -c -w"
+    "watch": "rollup -c -w",
+    "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0"
   },
   "devDependencies": {
     "@citizenfx/client": "catalog:",
+    "@rocketseat/eslint-config": "catalog:",
     "@rollup/plugin-commonjs": "catalog:",
     "@rollup/plugin-node-resolve": "catalog:",
     "@rollup/plugin-typescript": "catalog:",
     "@types/node": "catalog:",
+    "eslint": "catalog:",
     "rollup": "catalog:",
     "tslib": "catalog:",
     "typescript": "catalog:"
