@@ -1,5 +1,5 @@
 {
-  "name": "@forum-drive-spawnert-ts-vanilla/server",
+  "name": "@res/server",
   "version": "1.0.0",
   "scripts": {
     "clean": "rm -rf ./dist && rm -rf ./node_modules",

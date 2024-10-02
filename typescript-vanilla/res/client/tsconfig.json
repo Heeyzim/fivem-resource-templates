@@ -3,6 +3,10 @@
     "target": "ES2020",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "baseUrl": "./src",
+    "paths": {
+      "@client/*": ["./*"]
+    },
     // Location
     "outDir": "./dist",
     // Other
