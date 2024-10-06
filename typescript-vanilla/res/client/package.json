@@ -5,21 +5,17 @@
   "scripts": {
     "clean": "rm -rf ./dist && rm -rf ./node_modules",
     "prebuild": "rm -rf ./dist",
-    "--------- BUILD ---------": "--------- BUILD ---------",
-    "build": "rollup -c",
-    "--------- WATCH ---------": "--------- WATCH ---------",
-    "watch": "rollup -c -w",
-    "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0"
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0 --ignore-path .eslintignore"
   },
   "devDependencies": {
     "@citizenfx/client": "catalog:",
     "@rocketseat/eslint-config": "catalog:",
-    "@rollup/plugin-commonjs": "catalog:",
-    "@rollup/plugin-node-resolve": "catalog:",
-    "@rollup/plugin-typescript": "catalog:",
     "@types/node": "catalog:",
+    "esbuild": "catalog:",
+    "esbuild-plugin-fileloc": "catalog:",
     "eslint": "catalog:",
-    "rollup": "catalog:",
     "tslib": "catalog:",
     "typescript": "catalog:"
   },

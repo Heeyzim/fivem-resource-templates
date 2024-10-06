@@ -2,8 +2,12 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",
     // Location
+    "baseUrl": "./src",
+    "paths": {
+      "@client/*": ["./*"]
+    },
     "outDir": "./dist",
     // Other
     "types": ["@citizenfx/client", "@types/node"],
