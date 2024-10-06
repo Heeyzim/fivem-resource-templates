@@ -15,7 +15,6 @@
     "esbuild": "catalog:",
     "esbuild-plugin-fileloc": "catalog:",
     "eslint": "catalog:",
-    "rollup": "catalog:",
     "tslib": "catalog:",
     "typescript": "catalog:"
   },
