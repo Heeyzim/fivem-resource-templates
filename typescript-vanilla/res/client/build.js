@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { build } = require("esbuild");
-const { filelocPlugin } = require("esbuild-plugin-fileloc");
+import esbuild from "esbuild";
+import pkg from "esbuild-plugin-fileloc";
+const { filelocPlugin } = pkg;
 
 const isWatchMode = process.argv.includes("--watch");
 
@@ -23,14 +23,15 @@ const buildOptions = (isWatch, platform, entry, outFile) => ({
   plugins: platform === "node" ? [filelocPlugin()] : [],
 });
 
-build(
-  buildOptions(
-    isWatchMode,
-    "browser",
-    "./src/index.ts",
-    "./dist/client/index.js",
-  ),
-)
+esbuild
+  .build(
+    buildOptions(
+      isWatchMode,
+      "browser",
+      "./src/index.ts",
+      "./dist/client/index.js",
+    ),
+  )
   .then(() =>
     console.log(
       `Built client files${isWatchMode ? " (watching for changes)" : ""}`,
