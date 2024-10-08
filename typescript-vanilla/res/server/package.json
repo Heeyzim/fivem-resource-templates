@@ -1,6 +1,7 @@
 {
   "name": "@res/server",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "clean": "rm -rf ./dist && rm -rf ./node_modules",
     "prebuild": "rm -rf ./dist",
