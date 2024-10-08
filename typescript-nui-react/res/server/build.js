@@ -7,7 +7,6 @@ const isWatchMode = process.argv.includes("--watch");
 const buildOptions = (isWatch, platform, entry, outFile) => ({
   bundle: true,
   sourcemap: "inline",
-  minify: platform === "browser" && !isWatch,
   watch: isWatch
     ? {
         onRebuild(error) {
@@ -18,8 +17,8 @@ const buildOptions = (isWatch, platform, entry, outFile) => ({
     : false,
   entryPoints: [entry],
   outfile: outFile,
-  platform,
-  target: platform === "node" ? "node16" : undefined,
+  platform: "node",
+  target: "node16",
   plugins: platform === "node" ? [filelocPlugin()] : [],
 });
 
@@ -27,7 +26,7 @@ esbuild
   .build(
     buildOptions(
       isWatchMode,
-      "browser",
+      "node",
       "./src/index.ts",
       "./dist/server/index.js",
     ),
