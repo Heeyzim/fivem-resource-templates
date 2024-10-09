@@ -24,5 +24,7 @@
     "node": ">=16",
     "pnpm": ">=7"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@repyx/events": "^1.1.0"
+  }
 }
