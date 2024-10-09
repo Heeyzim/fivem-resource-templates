@@ -32,7 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <VisibilityProvider>
       <ThemeProvider defaultTheme="dark">
-        <ThemeWrapper defaultTheme="violet">
+        <ThemeWrapper defaultTheme="slate">
           <App />
         </ThemeWrapper>
       </ThemeProvider>
