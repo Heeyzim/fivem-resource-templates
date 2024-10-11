@@ -1,14 +1,15 @@
-import { initNui, toggleNuiFrame } from './nui'
+import { ClientEvents } from "@repyx/events";
 
-initNui()
+export class Client {
+  events: ClientEvents = new ClientEvents();
 
-on('onResourceStart', (resName: string) => {
-  if (resName === GetCurrentResourceName()) {
-    console.log('TypeScript/Nui/React client-side boilerplate started!')
-    toggleNuiFrame(false)
+  constructor() {
+    on("onResourceStart", (resName: string) => {
+      if (resName === GetCurrentResourceName()) {
+        console.log(`[${resName}] started!`);
+      }
+    });
   }
-})
-
-on('onClientGameTypeStart', () => {
-  toggleNuiFrame(false)
-})
+}
+const client = new Client();
+globalThis.exports("client", () => client);

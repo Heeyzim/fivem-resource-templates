@@ -3,10 +3,6 @@ import { useConfig } from './hooks/use-config'
 import { useNuiEvent } from './hooks/useNuiEvent'
 import { Theme } from './themes/themes'
 
-if (window.mockTriggerNuiEvent) {
-  window.mockTriggerNuiEvent({ action: 'setVisible', data: false })
-}
-
 const App: React.FC = () => {
   const [config, setConfig] = useConfig()
   useNuiEvent<Theme['name']>('updateTheme', (theme) => {

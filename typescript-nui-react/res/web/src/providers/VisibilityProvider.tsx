@@ -27,11 +27,6 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({
   // Handle pressing escape/backspace
   useEffect(() => {
     // Only attach listener when we are visible
-    const resourceName = parent.GetParentResourceName()
-    parent.citFrames[resourceName].style.setProperty(
-      'visibility',
-      visible ? 'visible' : 'hidden',
-    )
 
     const keyHandler = (e: KeyboardEvent) => {
       if (['Backspace', 'Escape'].includes(e.code)) {

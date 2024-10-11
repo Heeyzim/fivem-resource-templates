@@ -2,7 +2,7 @@ import { MutableRefObject, useEffect, useRef } from 'react'
 import { noop } from '../utils/misc'
 
 interface NuiMessageData<T = unknown> {
-  action: string
+  name: string
   data: T
 }
 
@@ -33,7 +33,7 @@ export const useNuiEvent = <T = unknown>(
 
   useEffect(() => {
     const eventListener = (event: MessageEvent<NuiMessageData<T>>) => {
-      const { action: eventAction, data } = event.data
+      const { name: eventAction, data } = event.data
 
       if (savedHandler.current) {
         if (eventAction === action) {

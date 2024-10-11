@@ -1,7 +1,15 @@
-import { init } from '@client/init'
+import { ClientEvents } from "@repyx/events";
 
-on('onResourceStart', (resName: string) => {
-  if (resName === GetCurrentResourceName()) {
-    init()
+export class Client {
+  events: ClientEvents = new ClientEvents();
+
+  constructor() {
+    on("onResourceStart", (resName: string) => {
+      if (resName === GetCurrentResourceName()) {
+        console.log(`[${resName}] started!`);
+      }
+    });
   }
-})
+}
+const client = new Client();
+globalThis.exports("client", () => client);
