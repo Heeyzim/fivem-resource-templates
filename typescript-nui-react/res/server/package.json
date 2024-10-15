@@ -2,8 +2,8 @@
   "name": "@res/server",
   "version": "1.0.0",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf ./dist && rm -rf ./node_modules",
     "prebuild": "rm -rf ./dist",
