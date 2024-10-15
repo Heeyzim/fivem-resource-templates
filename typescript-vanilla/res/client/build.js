@@ -1,3 +1,4 @@
+import { exec } from "child_process";
 import esbuild from "esbuild";
 import pkg from "esbuild-plugin-fileloc";
 const { filelocPlugin } = pkg;
@@ -12,7 +13,10 @@ const buildOptions = (isWatch, platform, entry, outFile) => ({
     ? {
         onRebuild(error) {
           if (error) console.error("Rebuild failed:", error);
-          else console.log("Rebuilt successfully");
+          else {
+            console.log("Rebuilt successfully");
+            generateTypes();
+          }
         },
       }
     : false,
@@ -23,18 +27,25 @@ const buildOptions = (isWatch, platform, entry, outFile) => ({
   plugins: platform === "node" ? [filelocPlugin()] : [],
 });
 
+const generateTypes = () => {
+  exec("tsc --emitDeclarationOnly", (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error generating types: ${stderr}`);
+    } else {
+      console.log("Types generated successfully");
+    }
+  });
+};
+
 esbuild
   .build(
-    buildOptions(
-      isWatchMode,
-      "browser",
-      "./src/index.ts",
-      "./dist/client/index.js",
-    ),
+    buildOptions(isWatchMode, "browser", "./src/index.ts", "./dist/index.js"),
   )
-  .then(() =>
-    console.log(
-      `Built client files${isWatchMode ? " (watching for changes)" : ""}`,
-    ),
+  .then(
+    () =>
+      console.log(
+        `Built client files${isWatchMode ? " (watching for changes)" : ""}`,
+      ),
+    generateTypes(),
   )
   .catch(() => process.exit(1));
