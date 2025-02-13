@@ -7,7 +7,7 @@
     "paths": {
       "@client/*": ["./*"],
       "@shared/*": ["../shared/*"],
-      "@core/*": ["../../[utils]/*"]
+      "@core/*": ["../../../[utils]/*"]
     },
     // Location
     "outDir": "./dist",
