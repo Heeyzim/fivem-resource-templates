@@ -1,15 +1,3 @@
-import { ServerEvents } from "@repyx/events";
-
-export class Server {
-  events: ServerEvents = new ServerEvents();
-  constructor() {
-    on("onResourceStart", (resName: string) => {
-      if (resName === GetCurrentResourceName()) {
-        console.log(`[${resName}] Started!`);
-      }
-    });
-  }
-}
+import { Server } from "@server/controllers/server.controller";
 
 const server = new Server();
-globalThis.exports("server", () => server);

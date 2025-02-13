@@ -5,7 +5,9 @@
     "moduleResolution": "Node",
     "baseUrl": "./src",
     "paths": {
-      "@server": ["./*"]
+      "@server/*": ["./*"],
+      "@shared/*": ["../shared/*"],
+      "@core/*": ["../../[utils]/*"]
     },
     // Location
     "outDir": "./dist",

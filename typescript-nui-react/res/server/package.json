@@ -18,14 +18,11 @@
     "esbuild": "catalog:",
     "esbuild-plugin-fileloc": "catalog:",
     "eslint": "catalog:",
-    "tslib": "catalog:",
     "typescript": "catalog:"
   },
   "engines": {
     "node": ">=18",
     "pnpm": ">=9.5"
   },
-  "dependencies": {
-    "@repyx/events": "^1.1.0"
-  }
+  "dependencies": {}
 }

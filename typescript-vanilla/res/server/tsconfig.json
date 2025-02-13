@@ -5,6 +5,8 @@
     "moduleResolution": "Node",
     "paths": {
       "@server/*": ["./*"],
+      "@shared/*": ["../shared/*"],
+      "@core/*": ["../../[utils]/*"],
     },
     "baseUrl": "./src",
     // Location

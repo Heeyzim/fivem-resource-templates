@@ -6,7 +6,9 @@
     // Location
     "baseUrl": "./src",
     "paths": {
-      "@client/*": ["./*"]
+      "@client/*": ["./*"],
+      "@shared/*": ["../shared/*"],
+      "@core/*": ["../../[utils]/*"]
     },
     "outDir": "./dist",
     // Other
