@@ -3,11 +3,6 @@
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
     "no-useless-constructor": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ]
+    "@typescript-eslint/no-loss-of-precision": "off"
   }
 }
