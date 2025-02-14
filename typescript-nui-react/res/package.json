@@ -9,11 +9,8 @@
         "web"
     ],
     "scripts": {
-        "dev": "turbo run dev",
-        "build": "turbo run build",
-        "lint": "turbo run lint"
-    },
-    "devDependencies": {
-        "turbo": "^2.4.2"
+        "build": "pnpm run -r build",
+        "dev": "pnpm run -r dev",
+        "lint": "pnpm run -r lint"
     }
 }
