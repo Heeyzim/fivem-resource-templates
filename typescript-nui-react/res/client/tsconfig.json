@@ -1,25 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    // Location
-    "baseUrl": "./src",
     "paths": {
-      "@client/*": ["./*"],
-      "@shared/*": ["../shared/*"],
-      "@core/*": ["../../../[utils]/*"]
+      "@server/*": ["./*"],
+      "@core/*": ["../../../[utils]/*"],
+      "@shared/*": ["../../shared/*"]
     },
+    "baseUrl": "./src",
     "outDir": "./dist",
-    // Other
     "types": ["@citizenfx/client", "@types/node"],
-    "lib": ["ES2020"],
-    "strict": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "declaration": true,
-    "emitDeclarationOnly": true
+    "noImplicitAny": false,
+    "module": "es6",
+    "target": "es6",
+    "allowJs": true,
+    "lib": ["es2017"],
+    "moduleResolution": "node",
+    "experimentalDecorators": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["**/node_modules", "**/.test.ts"]
