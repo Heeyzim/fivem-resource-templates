@@ -1,3 +1,4 @@
+import { logger } from "@client/shared/logger";
 import { ClientController } from "@core/client/client.controller";
 import { FiveMController } from "@core/decorators/nyx.decorators";
 
@@ -6,6 +7,6 @@ export class Client extends ClientController {
   public constructor() {
     super();
 
-    console.log("Client controller initialized");
+    logger.info("Client controller initialized");
   }
 }
